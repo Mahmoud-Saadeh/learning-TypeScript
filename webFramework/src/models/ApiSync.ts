@@ -11,7 +11,7 @@ export class ApiSync<T extends HasId> {
     return axios.get<T>(`${this.rootUrl}/${id}`);
   }
 
-  save(data: T): AxiosPromise {
+  save(data: T): AxiosPromise<T> {
     const { id } = data;
 
     if (id) {
